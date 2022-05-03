@@ -6,7 +6,23 @@
 
 /* creates page grid for layout and sets background color */
 body {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: #C5E4E7;
+    height: 933px;
+}
+
+.logo {
+    margin: auto;
+}
+
+/* calculator section */
+.calculator {
+   width: 100%;
+   height: 80%;
+   /* margin-top: 11rem; */
+   background-color: #FFFFFF;
+   border-top-left-radius: 1.5rem;
+   border-top-right-radius: 1.5rem;
 }
