@@ -1,4 +1,12 @@
+/* setting page font size and font family */
 * {
     font-size: 16px;
     font-family: 'space mono', sans-serif;
+}
+
+/* creates page grid for layout and sets background color */
+body {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #C5E4E7;
 }
