@@ -18,25 +18,50 @@
 <body>
   <img src="./images/logo.svg" alt="logo" class="logo">
   <section class="calculator">
-    Bill
+    <p class="bill">Bill</p>
+    <input type="text" placeholder="0" id="billInput">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <p>Select Tip %</p>
+    <div class="tipButtonsGrid">
+      <button id="_5Button">5%</button>
+      <button id="_10Button">10%</button>
+      <button id="_15Button">15%</button>
+      <button id="_25Button">25%</button>
+      <button id="_50Button">50%</button>
+      <button id="customButton">Custom</button>
+    </div>
 
-  Number of People
+    <p class="peopleLabel">Number of People</p>
+    <input type="text" placeholder="0" id="peopleInput">
 
-  Tip Amount
-  / person
+    <div class="totalAmountGrid">
+      <p> Tip Amount
+        / person
+      </p>
+      <textarea placeholder="0" id="tipPerPerson"></textarea> 
+      <p>Total
+        / person
+      </p>
+      <textarea placeholder="0" id="totalPerPerson"></textarea>
+      <button id="resetButton">Reset</button>
+    </div>
+    
 
-  Total
-  / person
+  
+  
+  
+  
+  
+  
+  
 
-  Reset
+  
+
+ 
+
+  
+
+  
   </section>
 
 </body>
