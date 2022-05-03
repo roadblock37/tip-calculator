@@ -26,3 +26,40 @@ body {
    border-top-left-radius: 1.5rem;
    border-top-right-radius: 1.5rem;
 }
+
+.bill {
+    margin-left: 5%;
+}
+
+/* bill input field */
+#billInput {
+    width: 88%;
+    height: 48px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.peopleLabel {
+    margin-left: 5%;
+}
+
+/* people input field */
+#peopleInput {
+    width: 88%;
+    height: 48px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.tipLabel {
+    margin: 5%;
+}
+
+.tipButtonsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.7rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
