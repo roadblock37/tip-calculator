@@ -1,1 +1,31 @@
 /* CSS for desktops 1440px and above */
+
+/* setting page font size and font family */
+* {
+    font-size: 16px;
+    font-family: 'space mono', sans-serif;
+}
+
+/* creates page flex container for layout and sets background color */
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #C5E4E7;
+    
+}
+
+/* positions splitter logo on top of page */
+.logo {
+    margin: auto;
+}
+
+/* calculator section */
+.calculator {
+    width: 70%;
+    height: 50%;
+    background-color: #FFFFFF;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    margin: auto;
+ }
