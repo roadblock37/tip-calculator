@@ -1,1 +1,62 @@
 /* desktop css min width 768px */
+:root {
+    --temp4: hsl(172, 67%, 45%);
+    --btn-background: hsl(183, 100%, 15%);
+    --labelText: hsl(186, 14%, 43%);
+    --temp2: hsl(184, 14%, 56%);
+    --background: hsl(185, 41%, 84%);
+    --input: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.calc-container {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+input {
+    background-color: var(--input);
+    text-align: end;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.output-container {
+    background-color: var(--btn-background);
+    width: 47%;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#reset {
+    grid-column: 1 / -1;
+}
+
+button {
+    background-color: var(--btn-background);
+    color: var(--white);
+}
