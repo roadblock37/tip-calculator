@@ -3,7 +3,7 @@
     --btnHover: hsl(172, 67%, 45%);
     --btn-background: hsl(183, 100%, 15%);
     --labelText: hsl(186, 14%, 43%);
-    --temp2: hsl(184, 14%, 56%);
+    --outputTextSecondary: hsl(184, 14%, 56%);
     --background: hsl(185, 41%, 84%);
     --input: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
@@ -17,6 +17,7 @@ body {
     background-color: var(--background);
 }
 
+/* container that holds input and output containers */
 .calc-container {
     background-color: var(--white);
     display: flex;
@@ -25,17 +26,21 @@ body {
     justify-content: space-between;
 }
 
+/* input fields */
 input {
     background-color: var(--input);
     text-align: end;
 }
 
+/* input container with input fields for bill amount
+tip amount and number of people */
 .input-container {
     display: flex;
     flex-direction: column;
     width: 47%;
 }
 
+/* tip amount buttons */
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -43,6 +48,7 @@ input {
     gap: 1rem;
 }
 
+/* output container with tip total amounts */
 .output-container {
     background-color: var(--btn-background);
     width: 47%;
@@ -52,10 +58,12 @@ input {
     grid-template-rows: repeat(3, 1fr);
 }
 
+/* reset button */
 #reset {
     grid-column: 1 / -1;
 }
 
+/* button styling */
 button {
     background-color: var(--btn-background);
     color: var(--white);
@@ -66,4 +74,18 @@ button:hover {
     background-color: var(--btnHover);
     cursor: pointer;
     color: var(--btn-background);
+}
+
+textarea {
+    background-color: var(--btn-background);
+    color: var(--btnHover);
+    border-style: none;
+}
+
+.tipTitle {
+    color: var(--white);
+}
+
+.outputLabels {
+    color: var(--outputTextSecondary);
 }
