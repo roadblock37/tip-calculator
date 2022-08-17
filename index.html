@@ -22,7 +22,7 @@
       <!-- container for bill amount -->
       <!-- <p>Bill</p> -->
       <div class="input-container">
-        <label for="bill">Bill</label>
+        <label id="labelBill" for="bill">Bill</label>
         <input type="number" name="bill" id="bill" placeholder="0" required/>
       </div>
       <!-- container for radio buttons for tip amount -->
@@ -46,11 +46,12 @@
         </div>
       <!-- container for number of people input -->
       <div class="input-container">
-        <label for="people">Number of People</label>
+        <label id="labelPeople" for="people">Number of People</label>
         <input type="number" name="people" id="people" min="0" step="1" placeholder="0" required/>
       </div>
     </section>
       
+    <!-- output container that holds output fields and the reset button -->
     <section class="output-container">
       <div>
         <h4 class="tipTitle">Tip Amount</h4>
@@ -65,13 +66,6 @@
       <button type="reset" name="reset" id="reset" disabled>Reset</button>
     </section>
   </main>
-  
- 
-  
-
-  
-
-  
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
