@@ -17,43 +17,56 @@
   <!-- app logo at top of the page -->
   <img src="./images/logo.svg" alt="logo" class="logo">
   <!-- section containing calculator -->
-  <section class="calc-container">
-    <section class="input-container">
-      <!-- bill amount input field -->
-      <h4>Bill</h4>
-      <input type="number" placeholder="0"/>
-      <!-- tip amount buttons in a grid -->
-      <h4>Select Tip %</h4>
-      <div class="btn-grid">
-        <button>5%</button>
-        <button>10%</button>
-        <button>15%</button>
-        <button>25%</button>
-        <button>50%</button>
-        <button name="custom">Custom</button>
+  <main>
+    <section class="main-input-container">
+      <!-- container for bill amount -->
+      <!-- <p>Bill</p> -->
+      <div class="input-container">
+        <label for="bill">Bill</label>
+        <input type="number" name="bill" id="bill" placeholder="0" required/>
       </div>
-      <!-- number of people input field -->
-      <h4>Number of People</h4>
-      <input type="number" placeholder="0">
+      <!-- container for radio buttons for tip amount -->
+        <p>Select Tip %</p>
+        <div class="options-container">
+          <input type="radio" name="option" value="option5" id="option5" checked/>
+          <label for="option5">5%</label>
+          <input type="radio" name="option" value="option10" id="option10"/>
+          <label for="option10">10%</label>
+          <input type="radio" name="option" value="option15" id="option15"/>
+          <label for="option15">15%</label>
+          <input type="radio" name="option" value="option25" id="option25"/>
+          <label for="option25">25%</label>
+          <input type="radio" name="option" value="option50" id="option50"/>
+          <label for="option50">50%</label>
+          <!-- container for custom tip amount -->
+          <div class="input-custom">
+            <label for="custom"></label>
+            <input type="number" name="custom" id="custom" placeholder="custom"/>
+          </div>
+        </div>
+      <!-- container for number of people input -->
+      <div class="input-container">
+        <label for="people">Number of People</label>
+        <input type="number" name="people" id="people" min="0" step="1" placeholder="0" required/>
+      </div>
     </section>
-    <!-- output container with fields for totals set in a grid -->
+      
     <section class="output-container">
       <div>
         <h4 class="tipTitle">Tip Amount</h4>
         <p class="outputLabels">/ person</p>
       </div>
-      <textarea id="tip" >$0.00</textarea>
+      <p id="tip" >$0.00</p>
       <div>
         <h4 class="tipTitle">Total</h4>
         <p class="outputLabels">/ person</p>
       </div>
-      <textarea id="total">$0.00</textarea>
-
-      <button type="reset" name="reset" id="reset">Reset</button>
+      <p id="total">$0.00</p>
+      <button type="reset" name="reset" id="reset" disabled>Reset</button>
     </section>
-
-  </section>
-
+  </main>
+  
+ 
   
 
   
