@@ -108,8 +108,10 @@ function radioSelect(event) {
     if (value !== "" && Number(value > 0) 
         && key !== "" && Number(key) > 0 
         && Number.isInteger(key) === true){
-            totalOut.innerHTML = `${(divider * (radioValue / 100 + 1)).toFixed(2)}`;
+            totalOut.innerHTML = `$${(divider * (radioValue / 100 + 1)).toFixed(2)}`;
             amountOut.innerHTML = `${(divider * (radioValue / 100 + 1)).toFixed(2)}`;
+    console.log(radioValue);
+
         }
 }
 
@@ -122,31 +124,34 @@ function input(){
     const labelPeople = document.getElementById("labelPeople");
     const default5 = document.querySelector("input[value='option5']");
     
-    if ( value !== "") {
-        value = Number(value);
+    if (value > 0){
+        totalOut.innerHTML = value;
+    }
+    // if ( value !== "") {
+    //     value = Number(value);
 
-        // if bill amount is negative 
-        if (value < 0) {
-            span1.innerHTML = "Amount can't be negative";
-            labelBill.append(span1);
-            inputBill.style.color = "red";
-            inputBill.classList.add("zero-negative");
-        }
-        // if bill amount is zero
-        else if (value === 0){
-            span1.innerHTML = "Amount can't be zero";
-            labelBill.append(span1);
-            inputBill.style.color = "red";
-            inputBill.classList.add("zero-negative");
-        }
-        else {
-            span1.innerHTML = "";
-            inputBill.style.color = "inherit";
-            inputBill.classList.remove("zero-negative");
-            totalOut.innerHTML = `$0.00`;
-            amountOut.innerHTML = `$0.00`;
+    //     if bill amount is negative 
+    //     if (value < 0) {
+    //         span1.innerHTML = "Amount can't be negative";
+    //         labelBill.append(span1);
+    //         inputBill.style.color = "red";
+    //         inputBill.classList.add("zero-negative");
+    //     }
+    //     if bill amount is zero
+    //     else if (value === 0){
+    //         span1.innerHTML = "Amount can't be zero";
+    //         labelBill.append(span1);
+    //         inputBill.style.color = "red";
+    //         inputBill.classList.add("zero-negative");
+    //     }
+    //     else {
+    //         span1.innerHTML = "";
+    //         inputBill.style.color = "inherit";
+    //         inputBill.classList.remove("zero-negative");
+    //         totalOut.innerHTML = `$0.00`;
+    //         amountOut.innerHTML = `$0.00`;
 
-        }
+    //     }
 
         // if number of people is empty or zero produce error message
         if (key !== ""){
@@ -202,12 +207,14 @@ function input(){
         }
         else {
             reset.setAttribute("disabled", "");
-        }  
-    }   
-}
+        } 
+    console.log("bill amount changed")  ;
+
+    } 
+// }
 
 // set event listener to bill amount and number of people input fields
-inputBill.addEventListener("keyup", input);
+inputBill.addEventListener("change", test);
 inputPeople.addEventListener("keyup", input);
 
 // reset button event listener
@@ -223,7 +230,12 @@ function resetButton(event){
     amountOut.innerHTML = `$0.00`;
     default5.checked = true;
     reset.setAttribute("disabled", "");
+    console.log("reset button clicked");
 
 }
 
 reset.addEventListener("click", resetButton);
+
+function test(event){
+    totalOut.innerHTML = inputBill.value;
+}
