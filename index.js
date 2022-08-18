@@ -214,7 +214,7 @@ function input(){
 // }
 
 // set event listener to bill amount and number of people input fields
-inputBill.addEventListener("change", test);
+inputBill.addEventListener("input", input);
 inputPeople.addEventListener("keyup", input);
 
 // reset button event listener
