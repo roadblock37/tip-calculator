@@ -62,4 +62,20 @@ custom.addEventListener("input", (e) => {
     totalPerPerson.innerText = "$" + tip.totalAmountPerPerson;
 });
 
+// reset button event listener
+reset.addEventListener("click", (e) => {
+    const option5 = document.getElementById("option5");
+    inputBill.value = 0;
+    inputPeople.value = 0;
+    custom.value = "";
+    tipPerPerson.innerText = `$0.00`;
+    totalPerPerson.innerText = `$0.00`;
+    reset.disabled = true;
+
+    if (radioChecked){
+        radioChecked.checked = false;
+    }
+});
+
+
 
