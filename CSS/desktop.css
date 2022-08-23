@@ -1,12 +1,15 @@
 /* desktop css min width 768px */
 :root {
-    --btnHover: hsl(172, 67%, 45%);
+    --btnHover: #9FE8DF;
+    --btnHoverText: #00474B;
     --btn-background: hsl(183, 100%, 15%);
     --labelText: hsl(186, 14%, 43%);
     --outputTextSecondary: hsl(184, 14%, 56%);
     --background: hsl(185, 41%, 84%);
     --input: #F3F9FA;
     --white: hsl(0, 0%, 100%);
+    --buttonFocus: #26C2AE;
+
 }
 
 * {
@@ -126,6 +129,11 @@ input[type="radio"] {
     width: 118px;
     height: 48px;
   }
+
+input[type="radio"]:checked+label {
+    background-color: var(--buttonFocus);
+    color: var(--btnHoverText);
+}
 
   
 .tipTitle {
