@@ -40,7 +40,26 @@ radios.forEach(radio => {
     });
 });
 
-// event listener for radio buttons
+// custom tip event listener
+custom.addEventListener("input", (e) => {
+    // enable reset button
+    reset.disabled = false;
+    
+    // uncheck tip percentage if there is a custom amount input
+    if (radioChecked){
+        radioChecked.checked = false;
+    }
 
-// inputBill and inputPeople event listeners
+    // if there are no people or bill amount is zero nothing happens
+    if (!parseInt(inputPeople.value) || !parseInt(bill.value)) {
+        reset.disabled = true;
+        return;
+    }
+
+    // compute tip
+    const tip = computeTip(inputBill.value, e.target.value, inputPeople.value);
+    tipPerPerson.innerText = "$" + tip.perPersonTip;
+    totalPerPerson.innerText = "$" + tip.totalAmountPerPerson;
+});
+
 
