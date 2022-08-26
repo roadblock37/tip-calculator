@@ -62,6 +62,21 @@ custom.addEventListener("input", (e) => {
     totalPerPerson.innerText = "$" + tip.totalAmountPerPerson;
 });
 
+// TODO
+// bill input event listener
+inputBill.addEventListener("input", (e) => {
+    const bill = document.getElementById("bill");
+    // if bill is zero throw error
+    if (bill.value === 0 || bill.value < 0){
+        bill.style = "border-color: red";
+        
+    }
+});
+
+// TODO
+// number of people event listener
+inputPeople.addEventListener("input", (e) => {});
+
 // reset button event listener
 reset.addEventListener("click", (e) => {
     const option5 = document.getElementById("option5");
