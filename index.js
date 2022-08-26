@@ -65,11 +65,12 @@ custom.addEventListener("input", (e) => {
 // TODO
 // bill input event listener
 inputBill.addEventListener("input", (e) => {
-    const bill = document.getElementById("bill");
-    // if bill is zero throw error
-    if (bill.value === 0 || bill.value < 0){
-        bill.style = "border-color: red";
-        
+    // enable reset button
+    reset.disabled = false;
+
+    if (e.target.value <= 0){
+        document.getElementById("bill").style = "border-color: 'red';"
+        console.log("no bill amount");
     }
 });
 
@@ -79,7 +80,6 @@ inputPeople.addEventListener("input", (e) => {});
 
 // reset button event listener
 reset.addEventListener("click", (e) => {
-    const option5 = document.getElementById("option5");
     inputBill.value = 0;
     inputPeople.value = 0;
     custom.value = "";
@@ -89,6 +89,7 @@ reset.addEventListener("click", (e) => {
 
     if (radioChecked){
         radioChecked.checked = false;
+        document.getElementById("option5").checked = true;
     }
 });
 
