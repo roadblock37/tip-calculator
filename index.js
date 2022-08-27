@@ -68,9 +68,12 @@ inputBill.addEventListener("input", (e) => {
     // enable reset button
     reset.disabled = false;
 
-    if (e.target.value === '0'){
-        inputBill.classList.add('zero-negative');
-        console.log("no bill amount");
+    if (e.target.value <= '0'){
+        document.getElementById("bill").style.border = "thin solid red";
+        console.log("no bill amount" + e.target.value);    
+    }
+    if (e.target.value > '0') {
+        document.getElementById('bill').style.borderStyle = "none";
     }
 });
 
