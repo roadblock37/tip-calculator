@@ -67,11 +67,14 @@ inputBill.addEventListener("input", (e) => {
     // enable reset button
     reset.disabled = false;
 
+    // if value is zero or negative error msg shows
+    // and border display in red
     if (e.target.value <= '0'){
         document.getElementById("bill").style.border = "thin solid red";
         document.getElementById('billError').className = "errorShow";
         console.log("no bill amount" + e.target.value);    
     }
+    // if the value is positive no error msg or border
     if (e.target.value > '0') {
         document.getElementById('bill').style.borderStyle = "none";
         document.getElementById('billError').className = "errorHide";
@@ -81,17 +84,45 @@ inputBill.addEventListener("input", (e) => {
 
 // TODO
 // number of people event listener
-inputPeople.addEventListener("input", (e) => {});
+inputPeople.addEventListener("input", (e) => {
+    // enable reset button
+    reset.disabled = false;
+
+    // if value is zero or negative error msg shows
+    // and border display in red
+    if (e.target.value <= '0'){
+        document.getElementById("people").style.border = "thin solid red";
+        document.getElementById('peopleError').className = "errorShow";
+        console.log("no people amount" + e.target.value);    
+    }
+    // if the value is positive no error msg or border
+    if (e.target.value > '0') {
+        document.getElementById('people').style.borderStyle = "none";
+        document.getElementById('peopleError').className = "errorHide";
+
+    }
+});
 
 // reset button event listener
 reset.addEventListener("click", (e) => {
+    // input fields revert to zero
     inputBill.value = 0;
     inputPeople.value = 0;
     custom.value = "";
+    // output fields revert to zero
     tipPerPerson.innerText = `$0.00`;
     totalPerPerson.innerText = `$0.00`;
+    // disable reset button
     reset.disabled = true;
+    // hide error msg and hide error border
+    document.getElementById('people').style.borderStyle = "none";
+    document.getElementById('peopleError').className = "errorHide";
+    document.getElementById('bill').style.borderStyle = "none";
+    document.getElementById('billError').className = "errorHide";
 
+
+
+    // uncheck the radio button and select 5%
     if (radioChecked){
         radioChecked.checked = false;
         document.getElementById("option5").checked = true;
