@@ -1,29 +1,241 @@
-/* mobile css max width 767px */
-/* ## Colors
-
-### Primary
-
-- Strong cyan: hsl(172, 67%, 45%)
-
-### Neutral
-
-- Very dark cyan: hsl(183, 100%, 15%)
-- Dark grayish cyan: hsl(186, 14%, 43%)
-- Grayish cyan: hsl(184, 14%, 56%)
-- Light grayish cyan: hsl(185, 41%, 84%)
-- Very light grayish cyan: hsl(189, 41%, 97%)
-- White: hsl(0, 0%, 100%) */
-
+/* desktop css min width 768px */
 :root {
-    --temp4: hsl(172, 67%, 45%);
+    --btnHover: #9FE8DF;
+    --btnHoverText: #00474B;
     --btn-background: hsl(183, 100%, 15%);
-    --labelText: hsl(186, 14%, 43%);
-    --temp2: hsl(184, 14%, 56%);
+    --labelText: #5E7A7D;
+    --outputTextSecondary: hsl(184, 14%, 56%);
     --background: hsl(185, 41%, 84%);
-    --temp3: hsl(189, 41%, 97%);
+    --input: #F3F9FA;
     --white: hsl(0, 0%, 100%);
+    --buttonFocus: #26C2AE;
+    --outputTxt: #26C2AE;
+
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--background);
 }
+
+.logo {
+    position: relative;
+    left: 40%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+/* container that holds input and output containers */
+main {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1.75rem;
+    width: 100%;
+    
+}
+
+/* input fields universal styling */
+#bill, #people, #custom  {
+    background-color: #F3F9FA;
+    text-align: end;
+    border-style: none;
+}
+
+/* container for input side of calculator */
+.main-input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+/* input container with input fields for bill amount
+tip amount and number of people */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 47%; */
+}
+
+
+
+/* number of people input field */
+#people {
+    background: url("../images/icon-person.svg") no-repeat left 0.5rem center;
+    color: var(--labelText);
+    background-color: #F3F9FA;
+    height: 48px;
+    font-size: 1.5rem;
+    margin-bottom: 10%;
+
+}
+
+#people:hover {
+    border: 1px solid #26C2AE;
+    cursor: pointer;
+}
+
+/* bill amount input field */
+#bill {
+    background: url("../images/icon-dollar.svg") no-repeat left 0.5rem center;
+    color: var(--labelText);
+    background-color: #F3F9FA;
+    height: 48px;
+    font-size: 1.5rem;
+}
+
+#bill:hover {
+    border: 1px solid #26C2AE;
+    cursor: pointer;
+}
+
+/* custom tip amount input field */
+#custom {
+    width: 118px;
+    height: 48px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#custom:hover {
+    border: 1px solid #26C2AE;
+    cursor: pointer;
+}
+
+/* tip amount buttons */
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 10%;
+}
+
+#tipLabel {
+    margin-top: 10%;
+}
+
+.options-container label:not(label[for="custom"]){
+    background-color: var(--btn-background);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* hover for tip options except for the custom field */
+.options-container label:not(label[for="custom"]):hover{
+    background-color: var(--btnHover);
+    color: var(--btn-background);
+}
+
+/* output container with tip total amounts */
+.output-container {
+    background-color: var(--btn-background);
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* reset button */
+#reset:disabled {
+    grid-column: 1 / -1;
+    height: 48px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: 15%;
+    background-color: #0D686D;
+    color: #00474B;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+#reset {
+    grid-column: 1 / -1;
+    height: 48px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: 15%;
+    background-color: #26C2AE;
+    color: #00474B;
+}
+
+#reset:hover {
+    cursor: pointer;
+    background-color: var(--btnHover);
+    color: var(--btnHoverText);
+}
+
+/* radio buttons */
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 118px;
+    height: 48px;
+  }
+
+input[type="radio"]:checked+label {
+    background-color: var(--buttonFocus);
+    color: var(--btnHoverText);
+}
+
+  /* output tip amount */
+.tipTitle {
+    color: var(--white);
+}
+
+.outputLabels {
+    color: var(--outputTextSecondary);
+}
+
+/* tip and total output */
+#tip, #total {
+    color: var(--outputTxt);
+    font-size: 2.5rem;
+    justify-self: end;
+}
+
+/* error class  */
+.zero {
+   border-color: red;
+   border-style: solid;    
+}
+
+/* input field label flex containers with a span for the label
+and a span for the error message */
+#labelBill, #labelPeople{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+/* error message for input fields default state*/
+.errorHide {
+    color: red;
+    font-size: 0.75rem;
+    visibility: hidden;
+}
+
+.errorShow {
+    color: red;
+    font-size: 0.75rem;
+    visibility: show;
+}
+

@@ -223,6 +223,7 @@ and a span for the error message */
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 2%;
 }
 
 /* error message for input fields default state*/
