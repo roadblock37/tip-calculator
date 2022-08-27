@@ -62,7 +62,6 @@ custom.addEventListener("input", (e) => {
     totalPerPerson.innerText = "$" + tip.totalAmountPerPerson;
 });
 
-// TODO
 // bill input event listener
 inputBill.addEventListener("input", (e) => {
     // enable reset button
@@ -70,10 +69,13 @@ inputBill.addEventListener("input", (e) => {
 
     if (e.target.value <= '0'){
         document.getElementById("bill").style.border = "thin solid red";
+        document.getElementById('billError').className = "errorShow";
         console.log("no bill amount" + e.target.value);    
     }
     if (e.target.value > '0') {
         document.getElementById('bill').style.borderStyle = "none";
+        document.getElementById('billError').className = "errorHide";
+
     }
 });
 

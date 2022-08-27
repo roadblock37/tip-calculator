@@ -147,7 +147,27 @@ input[type="radio"]:checked+label {
 /* error class  */
 .zero {
    border-color: red;
-   border-style: solid;
-   
-    
+   border-style: solid;    
+}
+
+/* input field label flex containers with a span for the label
+and a span for the error message */
+#labelBill, #labelPeople{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* error message for input fields default state*/
+.errorHide {
+    color: red;
+    font-size: 0.75rem;
+    visibility: hidden;
+}
+
+.errorShow {
+    color: red;
+    font-size: 0.75rem;
+    visibility: show;
 }

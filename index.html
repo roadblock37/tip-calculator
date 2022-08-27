@@ -21,7 +21,10 @@
     <section class="main-input-container">
       <!-- container for bill amount -->
       <div class="input-container">
-        <label id="labelBill" for="bill">Bill</label>
+        <label id="labelBill" for="bill">
+          <span>Bill</span>
+          <span class="errorHide" id="billError">Can't be zero</span>
+        </label>
         <input type="number" name="bill" id="bill" placeholder="0" required/>
       </div>
       <!-- container for radio buttons for tip amount -->
@@ -45,7 +48,10 @@
         </div>
       <!-- container for number of people input -->
       <div class="input-container">
-        <label id="labelPeople" for="people">Number of People</label>
+        <label id="labelPeople" for="people">
+          <span>Number of People</span>
+          <span class="errorHide" id="peopleError">Can't be zero</span>
+        </label>
         <input type="number" name="people" id="people" min="0" step="1" placeholder="0" required/>
       </div>
     </section>
