@@ -3,12 +3,13 @@
     --btnHover: #9FE8DF;
     --btnHoverText: #00474B;
     --btn-background: hsl(183, 100%, 15%);
-    --labelText: hsl(186, 14%, 43%);
+    --labelText: #5E7A7D;
     --outputTextSecondary: hsl(184, 14%, 56%);
     --background: hsl(185, 41%, 84%);
     --input: #F3F9FA;
     --white: hsl(0, 0%, 100%);
     --buttonFocus: #26C2AE;
+    --outputTxt: #26C2AE;
 
 }
 
@@ -27,6 +28,7 @@ main {
     flex-direction: row;
     padding: 2rem;
     justify-content: space-between;
+    align-items: center;
     border-radius: 1.75rem;
     width: 75%;
     margin: auto;
@@ -54,13 +56,21 @@ tip amount and number of people */
     /* width: 47%; */
 }
 
+
+
 /* number of people input field */
 #people {
     background: url("../images/icon-person.svg") no-repeat left 0.5rem center;
     color: var(--labelText);
     background-color: #F3F9FA;
+    height: 48px;
+    font-size: 1.5rem;
 
+}
 
+#people:hover {
+    border: 1px solid #26C2AE;
+    cursor: pointer;
 }
 
 /* bill amount input field */
@@ -68,8 +78,13 @@ tip amount and number of people */
     background: url("../images/icon-dollar.svg") no-repeat left 0.5rem center;
     color: var(--labelText);
     background-color: #F3F9FA;
+    height: 48px;
+    font-size: 1.5rem;
+}
 
-
+#bill:hover {
+    border: 1px solid #26C2AE;
+    cursor: pointer;
 }
 
 /* custom tip amount input field */
@@ -81,12 +96,22 @@ tip amount and number of people */
     font-weight: bold;
 }
 
+#custom:hover {
+    border: 1px solid #26C2AE;
+    cursor: pointer;
+}
+
 /* tip amount buttons */
 .options-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 1rem;
+    margin-bottom: 10%;
+}
+
+#tipLabel {
+    margin-top: 10%;
 }
 
 .options-container label:not(label[for="custom"]){
@@ -110,15 +135,41 @@ tip amount and number of people */
 .output-container {
     background-color: var(--btn-background);
     width: 47%;
-    padding: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
 
 /* reset button */
+#reset:disabled {
+    grid-column: 1 / -1;
+    height: 48px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: 15%;
+    background-color: #0D686D;
+    color: #00474B;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 #reset {
     grid-column: 1 / -1;
+    height: 48px;
+    font-weight: bold;
+    font-size: 1.75rem;
+    margin-top: 15%;
+    background-color: #26C2AE;
+    color: #00474B;
+}
+
+#reset:hover {
+    cursor: pointer;
+    background-color: var(--btnHover);
+    color: var(--btnHoverText);
 }
 
 
@@ -142,6 +193,13 @@ input[type="radio"]:checked+label {
 
 .outputLabels {
     color: var(--outputTextSecondary);
+}
+
+/* tip and total output */
+#tip, #total {
+    color: var(--outputTxt);
+    font-size: 2.5rem;
+    justify-self: end;
 }
 
 /* error class  */

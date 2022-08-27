@@ -87,6 +87,8 @@ inputBill.addEventListener("input", (e) => {
 inputPeople.addEventListener("input", (e) => {
     // enable reset button
     reset.disabled = false;
+    
+    
 
     // if value is zero or negative error msg shows
     // and border display in red
